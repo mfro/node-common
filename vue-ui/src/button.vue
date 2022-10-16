@@ -1,12 +1,11 @@
 <template>
-  <button
-    class="v-button"
-    v-ripple:ripple
-    :class="['color-' + color, { active }, classes]"
-    :disabled="disabled"
-    @click.stop="$emit('click')"
-  >
-    <v-flex align-center justify-center>
+  <button class="v-button"
+          v-ripple:ripple
+          :class="['color-' + color, { active }, classes]"
+          :disabled="disabled"
+          @click.stop="$emit('click')">
+    <v-flex align-center
+            justify-center>
       <slot />
     </v-flex>
   </button>
@@ -68,8 +67,6 @@ $default-text: rgba(0, 0, 0, 0.87);
 button.v-button {
   box-shadow: 1px 1px 4px fade-out(black, 0.75);
 
-  font-size: 0.875 * $text-unit;
-
   height: 2.25 * $text-unit;
   padding: 0 (4 * $unit);
 
@@ -79,16 +76,19 @@ button.v-button {
   outline: none;
   border-radius: 4px;
 
-  font-weight: 500;
-  text-transform: uppercase;
-  // text-indent: 0.0892857143em;
-  letter-spacing: 0.0892857143em;
-
   pointer-events: all;
 
   white-space: nowrap;
 
   transition: background-color 160ms, color 160ms, box-shadow 160ms;
+
+  > .v-flex {
+    font-size: 0.875 * $text-unit;
+    font-weight: 500;
+    text-transform: uppercase;
+    // text-indent: 0.0892857143em;
+    letter-spacing: 0.0892857143em;
+  }
 
   &.tile {
     border-radius: 0;

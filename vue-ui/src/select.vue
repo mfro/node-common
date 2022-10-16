@@ -79,6 +79,7 @@ div.v-select {
   margin-top: (4 * $unit);
 
   border-radius: 4px;
+  height: 2.25 * $text-unit;
 
   select {
     flex: 1 1 auto;
